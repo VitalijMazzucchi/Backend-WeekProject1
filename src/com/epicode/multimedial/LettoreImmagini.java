@@ -1,3 +1,4 @@
+package com.epicode.multimedial;
 
 public class LettoreImmagini extends Abstract implements Lumionosita {
 	private int lum;
