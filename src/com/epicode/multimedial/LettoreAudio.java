@@ -4,10 +4,9 @@ public class LettoreAudio extends Abstract implements Volume {
 	private	int durata;
 	private int vol;
 
-	public LettoreAudio(int durata, int vol, String title) {
-		super();
+	public LettoreAudio(String title,int durata, int vol) {
+		super(title);
 		this.durata = durata;
-		this.title=title;
 		this.vol=vol;
 	}
 

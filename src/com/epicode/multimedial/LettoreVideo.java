@@ -6,11 +6,10 @@ public class LettoreVideo extends Abstract implements Volume,Lumionosita {
 	private int lum;
 
 	public LettoreVideo(String title,int durata, int vol, int lum) {
-		super();
+		super(title);
 		this.durata = durata;
 		this.vol = vol;
 		this.lum = lum;
-		this.title=title;
 	}
 	
 

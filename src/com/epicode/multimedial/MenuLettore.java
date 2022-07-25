@@ -1,8 +1,6 @@
 package com.epicode.multimedial;
-import java.util.Iterator;
-import java.util.Scanner;
 
-import javax.swing.AbstractAction;
+import java.util.Scanner;
 
 public class MenuLettore {
 	private Abstract[] memory = new Abstract[5];
@@ -59,9 +57,9 @@ public class MenuLettore {
 			System.out.println("inserisci volume iniziale:");
 			Scanner inputvolume = new Scanner(System.in);
 			int volume = inputvolume.nextInt();
-			LettoreAudio audio = new LettoreAudio(durata, volume, titolo);			
+			LettoreAudio audio = new LettoreAudio(titolo, durata, volume);			
 			memory[space]= audio;
-			//System.out.println(memory[space].title);
+			System.out.println("File creatto correttamente:" + memory[space].title);
 			space++;
 			if(space==5) {
 				selectFile();
@@ -83,8 +81,7 @@ public class MenuLettore {
 			int luminosita = inputluminosita.nextInt();
 			LettoreImmagini img = new LettoreImmagini(titolo, luminosita);
 			memory[space]= img;
-			System.out.println(memory[space].title);
-			space++;
+			System.out.println("File creatto correttamente:" + memory[space].title);			space++;
 			if(space==5) {
 				selectFile();
 				break;
@@ -110,8 +107,7 @@ public class MenuLettore {
 			int volume = inputvolume.nextInt();
 			LettoreVideo video = new LettoreVideo(titolo, durata, volume, volume);
 			memory[space]= video;
-			System.out.println(memory[space].title);
-			space++;
+			System.out.println("File creatto correttamente:" + memory[space].title);			space++;
 			if(space==5) {
 				selectFile();
 				break;
@@ -130,39 +126,39 @@ public class MenuLettore {
 		for (Abstract ele : memory) {
 			System.out.println(ele.title);
 		}
-		System.out.println("seleziona:" + "1) " + memory[0].title + " "
-										+ "2) " + memory[1].title + " "
-										+ "3)" + memory[2].title + " "
-										+ "4) " + memory[3].title+ " "
-										+ "5)" + memory[4].title + " "
+		System.out.println("seleziona:" + "1) " + memory[0].getTitle() + " "
+										+ "2) " + memory[1].getTitle() + " "
+										+ "3)" + memory[2].getTitle() + " "
+										+ "4) " + memory[3].getTitle()+ " "
+										+ "5)" + memory[4].getTitle() + " "
 										+ "0)" + "Per uscire dal programma");
 	Scanner input =new Scanner(System.in);
 	int i = input.nextInt();
 		switch (i) {
 		case 1: {
-			System.out.println("file "+ memory[0].title + " avviato" );
+			System.out.println("file "+ memory[0].getTitle() + " avviato" );
 			selectFile();
 			break;
 		}
 		case 2: {
-			System.out.println("file "+ memory[1].title + " avviato" );
+			System.out.println("file "+ memory[1].getTitle() + " avviato" );
 			selectFile();
 			break;
 		}
 		case 3: {
 			
-			System.out.println("file "+ memory[2].title + " avviato" );
+			System.out.println("file "+ memory[2].getTitle() + " avviato" );
 			selectFile();
 			break;
 		}
 		case 4: {
-			System.out.println("file "+ memory[3].title + " avviato" );
+			System.out.println("file "+ memory[3].getTitle() + " avviato" );
 			selectFile();
 			break;
 			
 		}
 		case 5: {
-			System.out.println("file "+ memory[4].title + " avviato" );
+			System.out.println("file "+ memory[4].getTitle() + " avviato" );
 			selectFile();
 			break;
 			

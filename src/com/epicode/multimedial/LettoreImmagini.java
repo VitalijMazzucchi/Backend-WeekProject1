@@ -4,9 +4,8 @@ public class LettoreImmagini extends Abstract implements Lumionosita {
 	private int lum;
 	
 	public LettoreImmagini(String title,int lum) {
-		super();
+		super(title);
 		this.lum = lum;
-		this.title=title;
 	}
 	
 	
